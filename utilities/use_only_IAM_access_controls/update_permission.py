@@ -88,7 +88,7 @@ for d in databases:
         tables.extend(page['TableList'])
 
     for t in tables:
-        print('...Granting permissions on table ' + d['Name'] + '...')
+        print('...Granting permissions on table ' + t['Name'] + '...')
         table_resource = {'Table': {'DatabaseName': d['Name'], 'Name': t['Name']}}
         lakeformation.grant_permissions(Principal=iam_allowed_principal,
                                         Resource=table_resource,
